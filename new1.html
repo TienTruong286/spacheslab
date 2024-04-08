@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPACHeS Lab - Sensing and Predictive Analytics for Computational HEalthcare Systems</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+   
+   <style>
+    /* CSS styles */
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Montserrat', sans-serif;
+        color: rgb(248, 245, 245)ada;
+        line-height: 1.6;
+        background-color: rgb(248, 245, 245)ada;
+    }
+
+     h2, h3, h4, h5, h6 {
+        font-family: ' YaleNew, Times New Roman', serif;
+        color: black;
+    }
+
+    header {
+        background-color: white;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    header h1 {
+        margin: 0;
+        color: #1c2331;
+    }
+
+    nav a {
+        color: #1c2331;
+        text-decoration: none;
+        margin-left: 20px;
+        font-size: 1.1em;
+        text-transform: uppercase;
+        transition: color 0.3s ease;
+        font-weight: 600;
+    }
+
+    nav a:hover {
+        color:  #9CCB3B;
+    }
+
+    main {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 40px;
+        background-color: white;
+        box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);
+        border-radius: 5px;
+    }
+
+    section {
+        margin-bottom: 50px;
+    }
+
+    h1 {
+        margin-bottom: 30px;
+        padding-bottom: 15px;
+        border-bottom: 7px solid #005432 
+
+ ;
+        display: inline-block;
+        font-family: ' YaleNew, Times New Roman', serif;
+        color: #003262
+    }
+
+    footer {
+        background-color:black;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .news-item {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .news-item:last-child {
+        border-bottom: none;
+    }
+
+    .news-date {
+        font-weight: bold;
+        color: #8e44ad;
+    }
+
+    .contact-info {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+    }
+
+    .contact-info p {
+        margin: 10px;
+    }
+
+   .intro {
+    background: url('ai3.png') no-repeat center center/cover;
+    height: 90vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+    color: rgb(22, 14, 95);
+    position: relative;
+   
+}
+
+.intro-text {
+    z-index: 1; 
+    max-width: 700px; 
+    padding: 40px; 
+    margin-left: 40px; 
+    background-color:white  ; 
+    height: 60%; 
+     opacity: 0.95;
+} 
+
+.intro-text h2, .intro-text h4 { 
+    margin: 0 0 10px
+}; 
+
+
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: black;
+    background-color: white;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+
+  @media screen and (max-width: 767px) {
+    .intro {
+      height: auto;
+      padding: 0;
+      background-size: 100% auto;
+      background-position: top center;
+      flex-direction: column;
+    }
+
+    .intro-text {
+      max-width: 100%;
+      height: auto;
+      margin-left: 0;
+      padding: 20px;
+      background-color: white;
+      color:white;
+      opacity: 0.97;
+    }
+
+    .card-group.container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .card {
+    border-left: none !important;
+    border-right: none !important;
+  }  
+  }
+ .hover-underline {
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: green;
+    transition: width 0.3s ease;
+  }
+
+  .text-body-secondary a:hover .hover-underline {
+    width: 100%;
+  }
+  .hover-underline-news {
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color:#9CCB3B;
+    transition: width 0.3s ease;
+  }
+
+  .text-body-secondary a:hover .hover-underline-news {
+    width: 100%;
+  }
+
+ 
+
+
+</style>
+</head>
+<body style ="background-color:#F8F9FA;">
+<section style ="background-color: #FEFAD6;">
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color:white; padding:15px">
+  <a class="navbar-brand" href="#">
+      <img src="logo.png" alt="Logo" width="270" height="55" class="d-inline-block align-text-top">
+    
+    </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+    <div class="navbar-nav" style ="Mallory-Medium,'Gill Sans','Gill Sans MT',Calibri,Arial,sans-serif">
+      <a class="nav-link active" href="" style="color:black">Research </a>
+     
+      <a class="nav-link" href="" style="color:black">Fundings</a>
+    
+      <a class="nav-link" href="" style="color:black">Publications</a>
+      <a class="nav-link" href="" style="color:black">Members</a>
+      <a class="nav-link" href="" style="color:black">Facilities</a>
+      <a class="nav-link" href="" style="color:black">Teaching</a>
+      <a class="nav-link" href="" style="color:black">Join Us</a>
+    </div>
+    
+  </div>
+
+
+</nav>
+
+
+<section class="intro ">
+    <div class="intro-text">
+        <h1 class ="mobile" style ="color:#005432 "><b><span style ="background-color: #005432; color: white; padding: 1%;">Welcome</span> to Sensing and Predictive Analytics for Computational HEalthcare Systems (SPACHeS) Lab </b></h1>
+        <p style ="font-family: Georgia, 'Times New Roman', Times, serif;color:black">SPACHeS Lab is dedicated to advancing healthcare through innovative research in health informatics, connected healthcare systems, and prognostic analytics. Our interdisciplinary team works at the intersection of data science, medical devices, and predictive modeling to address the challenges of modern healthcare.</p>
+         <button type="button" class="btn btn-outline-dark" >Learn more</button>
+    </div>  
+</section>
+<section style ="background-color: #FEFAD6; padding-bottom: 60px; padding-top: 20px;">
+<h2 class="card-title" style="font-family: neue-haas-grotesk-display, sans-serif; font-weight: 8px; margin-left: 60px; margin-bottom: 30px;"> <b> <span style ="border-bottom: 3px solid #000">What we study? </span></b></h2>
+<div class="card-group container" style = "background-color: #FEFAD6;">
+  <div class="card" style ="border-top: none; border-left: none; border-bottom: none; background-color: #FEFAD6;">
+   
+    <div class="card-body">
+   <h4 class="card-title" style ="font-family: neue-haas-grotesk-display, sans-serif; font-weight: 10px solix;"> <b>Data-driven and Sensor-based Modeling </b></h4>
+      <p class="card-text"> Characterizing the coupling dynamics of the pathological processes via investigating the nonlinear lump parameter model of the biological processes driven by the collected sensor data</p>
+      <p class="card-text">
+  <small class="text-body-secondary">
+  <a href="#" style="text-decoration: none;">
+    <span style="display: inline-block; vertical-align: middle; position: relative; color:black">
+      <b>Learn more</b>
+      <span class="hover-underline"></span>
+    </span>
+    <img src="arrow.png" alt="Logo" width="55" height="45" style="display: inline-block; vertical-align: middle; margin-left: 5px;">
+  </a>
+</small>
+
+</p>
+    </div>
+  </div>
+  <div class="card" style="border-top: none; border-bottom: none; border-left: 4px solid #000; border-right: 4px solid #000; background-color: #FEFAD6;">
+    <div class="card-body">
+      <h4 class="card-title" style ="font-family: neue-haas-grotesk-display, sans-serif; font-weight: 10px solix;"> <b>Medical Device Manufacturing and Bio-signal Processing </b></h4>
+      <p class="card-text"> Deploying customized signals and data by considering the wearable, non-invasive, IoT, and point-of-cared designs with the integration of nonlinear bio-signal processing techniques and machine learning algorithms </p>
+       <small class="text-body-secondary">
+  <a href="#" style="text-decoration: none;">
+    <span style="display: inline-block; vertical-align: middle; position: relative; color:black">
+      <b>Learn more</b>
+      <span class="hover-underline"></span>
+    </span>
+    <img src="arrow.png" alt="Logo" width="55" height="45" style="display: inline-block; vertical-align: middle; margin-left: 5px;">
+  </a>
+</small>
+    </div>
+  </div>
+  <div class="card" style="border-top: none; border-bottom: none; border-right: 4px solid #000; background-color: #FEFAD6;">
+   
+    <div class="card-body">
+        <h4 class="card-title" style ="font-family: neue-haas-grotesk-display, sans-serif; font-weight: 10px solix;"> <b> Predictive Analytics for Personalized Healthcare</b></h4>
+     
+      <p class="card-text">Forecasting acute event onsets by qualifying the transition of the system dynamics from the normal to abnormal conditions via time series prediction models integrated with nonlinear dynamic system approaches. </p>
+       <small class="text-body-secondary">
+  <a href="#" style="text-decoration: none;">
+    <span style="display: inline-block; vertical-align: middle; position: relative; color:black">
+      <b>Learn more</b>
+      <span class="hover-underline"></span>
+    </span>
+    <img src="arrow.png" alt="Logo" width="55" height="45" style="display: inline-block; vertical-align: middle; margin-left: 5px;">
+  </a>
+</small>
+    </div>
+  </div>
+</div>
+
+</section>
+
+<section style ="background-color:#0F0F33; padding-bottom: 70px; padding-top: 20px;">
+<h2 class="card-title" style="font-family: neue-haas-grotesk-display, sans-serif; font-weight: 8px; margin-left: 60px; margin-bottom: 30px; color:white"> <b> <span style ="border-bottom: 3px solid white; padding-top: 20px;">Lab news </span></b></h2>
+<div class="card-group container" style = "background-color: #0F0F33;">
+  <div class="card" style ="border-top: none; border-left: none; border-bottom: none; background-color: #0F0F33;">
+   
+    <div class="card-body">
+   <h5 class="card-title" style ="font-family: neue-haas-grotesk-display, sans-serif; font-weight: 10px solix; color: #9CCB3B;"> <b>February, 2024 </b></h5>
+      <p class="card-text" style ="color:white"> <b> Congratulations to Phat Huynh on the hat-trick with three awards for IISE Quality Control and Reliability Engineering (QCRE) Division William A. Golomski Award, Thomas L. Fagan RAMS Student Paper Award, and Stan Oftshul Award.</b></p>
+      <p class="card-text">
+  <small class="text-body-secondary">
+  <a href="#" style="text-decoration: none;">
+    <span style="display: inline-block; vertical-align: middle; position: relative; color:white">
+      <b>More details</b>
+      <span class="hover-underline-news"></span>
+    </span>
+  </a>
+</small>
+
+</p>
+    </div>
+  </div>
+   <div class="card" style ="border-top: none; border-left: none; border-bottom: none; background-color: #0F0F33;">
+   
+    <div class="card-body">
+   <h5 class="card-title" style ="font-family: neue-haas-grotesk-display, sans-serif; font-weight: 10px solix; color: #9CCB3B;"> <b>October, 2023 </b></h5>
+      <p class="card-text" style ="color:white"> <b> Congratulations to Quoc Nguyen for being selected for the IISE Future Faculty Fellows (3F) Program 2023-2024.</b></p>
+      <p class="card-text">
+
+
+</p>
+    </div>
+  </div>
+ <div class="card" style ="border-top: none; border-left: none; border-bottom: none; background-color: #0F0F33;">
+   
+    <div class="card-body">
+   <h5 class="card-title" style ="font-family: neue-haas-grotesk-display, sans-serif; font-weight: 10px solix; color: #9CCB3B;"> <b>January, 2023 </b></h5>
+      <p class="card-text" style ="color:white"> <b> The paper "A physics-informed Latent Variables of Corrosion Growth in Oil and Gas Pipeline" co-authored by Phat Huynh, Abdulsalam Alqarni, Om Yadav and Trung Le, has won the SRE Doug Ogden Best Paper Award at the 2023 Annual Reliability and Maintainability Symposium (RAMS). </b></p>
+      <p class="card-text">
+  
+</p>
+    </div>
+  </div>
+</div>
+
+<div class="card-group container" style = "background-color: #0F0F33;">
+  <div class="card" style ="border-top: none; border-left: none; border-bottom: none; background-color: #0F0F33;">
+   
+    <div class="card-body">
+   <h5 class="card-title" style ="font-family: neue-haas-grotesk-display, sans-serif; font-weight: 10px solix; color: #9CCB3B;"> <b>November, 2022 </b></h5>
+      <p class="card-text" style ="color:white"> <b> The work on a hybrid multi-scale approach to model hospital-acquired infection risk using domain knowledge of disease transmission dynamics "A domain-knowledge modeling of hospital-acquired infection risk in Healthcare personnel from retrospective observational data: A case study for COVID-19" has been published in PLoS One. Congrats to Phat Huynh!</b></p>
+      
+    </div>
+  </div>
+   <div class="card" style ="border-top: none; border-left: none; border-bottom: none; background-color: #0F0F33;">
+   
+    <div class="card-body">
+   <h5 class="card-title" style ="font-family: neue-haas-grotesk-display, sans-serif; font-weight: 10px solix; color: #9CCB3B;"> <b>August, 2022 </b></h5>
+      <p class="card-text" style ="color:white"> <b> SPACHeS Lab moved to University of South Florida.</b></p>
+      <p class="card-text">
+
+
+</p>
+    </div>
+  </div>
+ <div class="card" style ="border-top: none; border-left: none; border-bottom: none; background-color: #0F0F33;">
+   
+    <div class="card-body">
+   <h5 class="card-title" style ="font-family: neue-haas-grotesk-display, sans-serif; font-weight: 10px solix; color: #9CCB3B;"> <b>May, 2022 </b></h5>
+      <p class="card-text" style ="color:white"> <b> Dr. Le has been selected to receive the NDSU's Peltier Award for Teaching Innovation. </b></p>
+      <p class="card-text">
+ 
+  <small class="text-body-secondary">
+  <a href="https://www.ndsu.edu/news/view/detail/68236" style="text-decoration: none;">
+    <span style="display: inline-block; vertical-align: middle; position: relative; color:white">
+      <b>More details</b>
+      <span class="hover-underline-news"></span>
+    </span>
+  </a>
+</small>
+
+</p>
+</p>
+    </div>
+  </div>
+</div>
+
+
+
+</section>
+
+</section>
+
+
+
+<footer class="text-center text-lg-start bg-body-tertiary text-muted" style ="border: none;">
+  <!-- Section: Social media -->
+  
+
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+
+          <p>
+           <b> University of South Florida<br> </b>
+             College of Engineering <br>Department of Industrial and Management Systems Engineering <br> </b>
+            4202 East Fowler Ave<br>
+            Tampa, FL 33620-0001 USA
+             <div class="footer-image">
+                <img src="usf.png" alt="Logo" width="290" height="75" class="d-inline-block align-text-top">
+            </div>
+          
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+    
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Useful links 
+          </h6>
+          <p>
+            <a href="#!" class="text-reset" style ="color: #005432"><b> Research </b></a>
+          </p>
+          <p>
+              <a href="#!" class="text-reset" style ="color: #005432"><b> Funding </b></a>
+          </p>
+          <p>
+              <a href="#!" class="text-reset" style ="color: #005432"><b> Publications </b></a>
+           
+          </p>
+          <p>
+              <a href="#!" class="text-reset" style ="color: #005432"><b>Members </b></a>
+           
+          </p>
+
+          <p>
+             <a href="#!" class="text-reset" style ="color: #005432"><b> Facilities </b></a>
+          </p>
+    
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          
+          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+          <p><i class="fas fa-home me-3"></i> Tampa, FL, USA</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            Email: tqle@usf.edu
+          </p>
+          <p><i class="fas fa-phone me-3"></i> Phone: (813) 974-5584 </p>
+   
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+<div class="card mb-3" style ="border: none;">
+  <img src="footer.png" class="card-img-top" alt="...">
+
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2024 Copyright: SPACHeS Lab
+  </div>
+  <!-- Copyright -->
+</div>
+</footer>
